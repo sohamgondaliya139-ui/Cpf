@@ -1,0 +1,78 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i, j;
+
+    cout << "1. Numeric Pattern\n";
+
+    for (i = 1; i <= 5; i++)
+    {
+        for (j = 1; j <= i; j++)
+            cout << j;
+        cout << endl;
+    }
+
+    cout << "\n2. Lowercase Pattern\n";
+
+    for (i = 1; i <= 5; i++)
+    {
+        for (j = 0; j < i; j++)
+            cout << char('a' + j);
+        cout << endl;
+    }
+
+    cout << "\n3. Uppercase Pattern\n";
+
+    for (i = 1; i <= 5; i++)
+    {
+        for (j = 0; j < i; j++)
+            cout << char('A' + j);
+        cout << endl;
+    }
+
+    cout << "\n4. Right Half Number Triangle\n";
+
+    for (i = 1; i <= 5; i++)
+    {
+        for (j = 1; j <= i; j++)
+            cout << j;
+        cout << endl;
+    }
+
+    cout << "\n5. Full Number Pyramid\n";
+
+    for (i = 1; i <= 5; i++)
+    {
+        for (j = 1; j <= 5 - i; j++)
+            cout << " ";
+
+        for (j = 1; j <= i; j++)
+            cout << j;
+
+        for (j = i - 1; j >= 1; j--)
+            cout << j;
+
+        cout << endl;
+    }
+
+    cout << "\n6. Full Alphabet Pyramid\n";
+
+    for (i = 1; i <= 5; i++)
+    {
+        for (j = 1; j <= 5 - i; j++)
+            cout << " ";
+
+        for (j = 0; j < i; j++)
+            cout << char('A' + j);
+
+        for (j = i - 2; j >= 0; j--)
+            cout << char('A' + j);
+
+        cout << endl;
+    }
+
+    return 0;
+}

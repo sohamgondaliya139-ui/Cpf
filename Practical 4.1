@@ -1,0 +1,72 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float m1, m2, m3, total, average, percentage;
+    string result, grade, remark;
+
+    cout << "Enter Mathematics marks: ";
+    cin >> m1;
+
+    cout << "Enter Physics marks: ";
+    cin >> m2;
+
+    cout << "Enter CPF marks: ";
+    cin >> m3;
+
+    total = m1 + m2 + m3;
+    average = total / 3;
+    percentage = (total / 300) * 100;
+
+    if (percentage >= 40)
+        result = "PASS";
+    else
+        result = "FAIL";
+
+    if (percentage >= 90)
+    {
+        grade = "O";
+        remark = "Outstanding";
+    }
+    else if (percentage >= 80)
+    {
+        grade = "A+";
+        remark = "Excellent";
+    }
+    else if (percentage >= 70)
+    {
+        grade = "A";
+        remark = "Very Good";
+    }
+    else if (percentage >= 60)
+    {
+        grade = "B+";
+        remark = "Good";
+    }
+    else if (percentage >= 50)
+    {
+        grade = "B";
+        remark = "Satisfactory";
+    }
+    else if (percentage >= 40)
+    {
+        grade = "C";
+        remark = "Needs Improvement";
+    }
+    else
+    {
+        grade = "F";
+        remark = "Failed";
+    }
+
+    cout << "\nTotal Marks: " << total;
+    cout << "\nAverage: " << average;
+    cout << "\nPercentage: " << percentage << "%";
+    cout << "\nResult: " << result;
+    cout << "\nGrade: " << grade;
+    cout << "\nRemark: " << remark;
+
+    return 0;
+}

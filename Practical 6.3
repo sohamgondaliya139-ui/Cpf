@@ -1,0 +1,124 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, pos, choice;
+    string enroll[100], name[100], grade[100];
+    float percentage[100];
+    string search;
+
+    cout << "Enter number of students: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << "\nEnrollment: ";
+        cin >> enroll[i];
+
+        cout << "Name: ";
+        cin >> name[i];
+
+        cout << "Percentage: ";
+        cin >> percentage[i];
+
+        cout << "Grade: ";
+        cin >> grade[i];
+    }
+
+    cout << "\n1. Insert";
+    cout << "\n2. Update";
+    cout << "\n3. Delete";
+    cout << "\nEnter choice: ";
+    cin >> choice;
+
+    if (choice == 1)
+    {
+        cout << "Enter position: ";
+        cin >> pos;
+
+        if (pos < 1 || pos > n + 1)
+        {
+            cout << "Invalid Position";
+            return 0;
+        }
+
+        for (int i = n; i >= pos; i--)
+        {
+            enroll[i] = enroll[i - 1];
+            name[i] = name[i - 1];
+            percentage[i] = percentage[i - 1];
+            grade[i] = grade[i - 1];
+        }
+
+        cout << "Enter Enrollment: ";
+        cin >> enroll[pos - 1];
+
+        cout << "Enter Name: ";
+        cin >> name[pos - 1];
+
+        cout << "Enter Percentage: ";
+        cin >> percentage[pos - 1];
+
+        cout << "Enter Grade: ";
+        cin >> grade[pos - 1];
+
+        n++;
+        cout << "Record Inserted";
+    }
+    else if (choice == 2)
+    {
+        cout << "Enter Enrollment to update: ";
+        cin >> search;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (enroll[i] == search)
+            {
+                cout << "Enter new Percentage: ";
+                cin >> percentage[i];
+
+                cout << "Enter new Grade: ";
+                cin >> grade[i];
+
+                cout << "Record Updated";
+                break;
+            }
+        }
+    }
+    else if (choice == 3)
+    {
+        cout << "Enter position to delete: ";
+        cin >> pos;
+
+        if (pos < 1 || pos > n)
+        {
+            cout << "Invalid Position";
+            return 0;
+        }
+
+        for (int i = pos - 1; i < n - 1; i++)
+        {
+            enroll[i] = enroll[i + 1];
+            name[i] = name[i + 1];
+            percentage[i] = percentage[i + 1];
+            grade[i] = grade[i + 1];
+        }
+
+        n--;
+        cout << "Record Deleted";
+    }
+
+    cout << "\n\nUpdated Student Records\n";
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << enroll[i] << " "
+             << name[i] << " "
+             << percentage[i] << " "
+             << grade[i] << endl;
+    }
+
+    return 0;
+}

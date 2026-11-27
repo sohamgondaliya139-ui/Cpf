@@ -1,0 +1,77 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, score[100], found = -1;
+    string id[100], name[100], search;
+
+    cout << "Enter number of participants: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << "\nEnter ID: ";
+        cin >> id[i];
+
+        cout << "Enter Name: ";
+        cin >> name[i];
+
+        cout << "Enter Score: ";
+        cin >> score[i];
+    }
+
+    cout << "\nEnter ID to search: ";
+    cin >> search;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (id[i] == search)
+        {
+            found = i;
+            break;
+        }
+    }
+
+    if (found != -1)
+    {
+        cout << "\nParticipant Found";
+        cout << "\nID: " << id[found];
+        cout << "\nName: " << name[found];
+        cout << "\nScore: " << score[found];
+    }
+    else
+        cout << "\nParticipant Not Found";
+
+    // Sorting in descending order
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (score[j] < score[j + 1])
+            {
+                swap(score[j], score[j + 1]);
+                swap(id[j], id[j + 1]);
+                swap(name[j], name[j + 1]);
+            }
+        }
+    }
+
+    cout << "\n\nRanking List\n";
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << i + 1 << ". "
+             << name[i] << " - " << score[i] << endl;
+    }
+
+    cout << "\nTop Three Performers\n";
+
+    for (int i = 0; i < n && i < 3; i++)
+    {
+        cout << name[i] << " - " << score[i] << endl;
+    }
+
+    return 0;
+}

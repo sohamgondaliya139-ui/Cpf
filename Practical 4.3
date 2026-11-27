@@ -1,0 +1,91 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int choice, semester;
+    string enrollment, name, branch, mobile;
+    float m1, m2, m3, total, average, percentage;
+
+    do
+    {
+        cout << "\n\n1. Register Student";
+        cout << "\n2. Display Student";
+        cout << "\n3. Enter Marks";
+        cout << "\n4. Display Result";
+        cout << "\n5. Exit";
+
+        cout << "\nEnter choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+            case 1:
+                cout << "Enrollment: ";
+                cin >> enrollment;
+
+                cout << "Name: ";
+                cin.ignore();
+                getline(cin, name);
+
+                cout << "Branch: ";
+                cin >> branch;
+
+                cout << "Semester: ";
+                cin >> semester;
+
+                cout << "Mobile: ";
+                cin >> mobile;
+
+                cout << "Student Registered Successfully";
+                break;
+
+            case 2:
+                cout << "\nEnrollment: " << enrollment;
+                cout << "\nName: " << name;
+                cout << "\nBranch: " << branch;
+                cout << "\nSemester: " << semester;
+                cout << "\nMobile: " << mobile;
+                break;
+
+            case 3:
+                cout << "Enter Mathematics marks: ";
+                cin >> m1;
+
+                cout << "Enter Physics marks: ";
+                cin >> m2;
+
+                cout << "Enter CPF marks: ";
+                cin >> m3;
+
+                cout << "Marks Entered Successfully";
+                break;
+
+            case 4:
+                total = m1 + m2 + m3;
+                average = total / 3;
+                percentage = (total / 300) * 100;
+
+                cout << "\nTotal: " << total;
+                cout << "\nAverage: " << average;
+                cout << "\nPercentage: " << percentage;
+
+                if (percentage >= 40)
+                    cout << "\nResult: PASS";
+                else
+                    cout << "\nResult: FAIL";
+                break;
+
+            case 5:
+                cout << "Exiting...";
+                break;
+
+            default:
+                cout << "Invalid Choice";
+        }
+
+    } while (choice != 5);
+
+    return 0;
+}

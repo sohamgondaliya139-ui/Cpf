@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("Name: Dhruv Chaudhari\n");
+    printf("Enrollment Number: 26CE001\n");
+    printf("Branch: Computer Engineering");
+
+    return 0;
+}

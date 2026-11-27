@@ -1,0 +1,29 @@
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string name, enrollment;
+    char choice = 'y';
+
+    while (choice == 'y' || choice == 'Y')
+    {
+        cout << "\nEnter Student Name: ";
+        cin.ignore();
+        getline(cin, name);
+
+        cout << "Enter Enrollment Number: ";
+        cin >> enrollment;
+
+        cout << "\nStudent Name: " << name;
+        cout << "\nEnrollment: " << enrollment;
+
+        cout << "\nRegister another student? (y/n): ";
+        cin >> choice;
+    }
+
+    cout << "\nRegistration Completed";
+
+    return 0;
+}
